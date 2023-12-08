@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id:  2023-12-06-create-student-table
+      author:  tural.musaibov
+      changes:
+        - createTable:
+            tableName: TEACHER
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: teachers_pk
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(128)
+              - column:
+                  name: surname
+                  type: VARCHAR(128)
+              - column:
+                  name: fullname
+                  type: VARCHAR(128)
+              - column:
+                  name: birth_date
+                  type: date
+              - column:
+                  name: phone_number
+                  type: VARCHAR(128)
+              - column:
+                  name: pincode
+                  type: VARCHAR(10)
+              - column:
+                  name: create_date
+                  type: TIMESTAMP(6)
+              - column:
+                  name: update_date
+                  type: TIMESTAMP(6)
