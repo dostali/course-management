@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id:  2023-12-06-create-course-table
+      author:  dostali.musazade
+      changes:
+        - createTable:
+            tableName: COURSE
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: course_pk
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(128)
+              - column:
+                  name: address
+                  type: VARCHAR(256)
+              - column:
+                  name: phone_number
+                  type: VARCHAR(128)
+              - column:
+                  name: create_date
+                  type: TIMESTAMP(6)
+              - column:
+                  name: update_date
+                  type: TIMESTAMP(6)

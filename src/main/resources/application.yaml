@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: course-management
+  datasource:
+    url: jdbc:mysql://localhost:8382/course-management
+    username: root
+    password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+      open-in-view: false
+      properties:
+        hibernate:
+          dialect: com.mysql.cj.jdbc.Driver
+      hibernate:
+        ddl-auto: none
+    liquibase:
+      enabled: true
+      change-log: classpath:db/changelog/db.changelog-master.yaml
+
+
+server:
+  servlet:
+    context-path: /course-management
+  port: 8084

@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id:  2023-12-06-course-student-contract-table
+      author:  dostali.musazade
+      changes:
+        - createTable:
+            tableName: COURSE_STUDENT_CONTRACT
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: course-student-contract_pk
+                    nullable: false
+              - column:
+                  name: monthly_amount
+                  type: NUMERIC
+              - column:
+                  name: total_amount
+                  type: NUMERIC
+              - column:
+                  name: contract_date
+                  type: date
+              - column:
+                  name: course_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: course_fk
+                    references: COURSE(id)
+              - column:
+                  name: student_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: student_fk
+                    references: STUDENT(id)
+              - column:
+                  name: create_date
+                  type: TIMESTAMP(6)
+              - column:
+                  name: update_date
+                  type: TIMESTAMP(6)
+
