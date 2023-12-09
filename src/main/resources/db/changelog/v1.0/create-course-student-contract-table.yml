@@ -38,13 +38,6 @@ databaseChangeLog:
                     foreignKeyName: student_fk
                     references: STUDENT(id)
               - column:
-                  name: teacher_id
-                  type: bigint
-                  constraints:
-                    nullable: false
-                    foreignKeyName: teacher_fk
-                    references: TEACHER(id)
-              - column:
                   name: create_date
                   type: TIMESTAMP(6)
               - column:
