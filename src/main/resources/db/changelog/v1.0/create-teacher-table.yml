@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id:  2023-12-06-create-student-table
+      id:  2023-12-06-create-teacher-table
       author:  tural.musaibov
       changes:
         - createTable:

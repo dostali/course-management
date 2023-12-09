@@ -42,5 +42,4 @@ public class TeacherEntity {
     @Basic
     @Column(name = "update_date")
     private Timestamp updateDate;
-
 }
