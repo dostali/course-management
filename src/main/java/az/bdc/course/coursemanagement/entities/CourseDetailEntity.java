@@ -36,6 +36,8 @@ public class CourseDetailsEntity {
 
     private LocalDateTime updateDate;
 
-
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "course_entity_id")
+    private CourseEntity courseEntity;
 
 }

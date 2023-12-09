@@ -4,7 +4,7 @@ databaseChangeLog:
       author:  Habib.Habibli
       changes:
         - createTable:
-            tableName: COURSE_DETAILS
+            tableName: COURSE_DETAIL
             columns:
               - column:
                   name: id
@@ -12,7 +12,7 @@ databaseChangeLog:
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    primaryKeyName: course_details_pk
+                    primaryKeyName: course_detail_pk
                     nullable: false
               - column:
                   name: name
