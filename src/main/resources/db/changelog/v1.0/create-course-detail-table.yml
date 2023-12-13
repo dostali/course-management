@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id:  2023-12-06-create-course-table
-      author:  dostali.musazade
+      id:  2023-12-06-create-course-detail-table
+      author:  Habib.Habibli
       changes:
         - createTable:
-            tableName: COURSE
+            tableName: COURSE_DETAIL
             columns:
               - column:
                   name: id
@@ -12,7 +12,7 @@ databaseChangeLog:
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    primaryKeyName: course_pk
+                    primaryKeyName: course_detail_pk
                     nullable: false
               - column:
                   name: name
@@ -23,6 +23,13 @@ databaseChangeLog:
               - column:
                   name: phone_number
                   type: VARCHAR(128)
+              - column:
+                  name: course_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: course_and_course_detail_fk
+                    references: COURSE(id)
               - column:
                   name: create_date
                   type: TIMESTAMP(6)
