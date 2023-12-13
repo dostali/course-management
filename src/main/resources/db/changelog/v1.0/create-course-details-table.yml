@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id:  2023-12-06-create-course-details-table
+      author:  Habib.Habibli
+      changes:
+        - createTable:
+            tableName: COURSE_DETAILS
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: course_details_pk
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(128)
+              - column:
+                  name: address
+                  type: VARCHAR(256)
+              - column:
+                  name: phone_number
+                  type: VARCHAR(128)
+              - column:
+                  name: course_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: course_and_details_fk
+                    references: COURSE(id)
+              - column:
+                  name: create_date
+                  type: TIMESTAMP(6)
+              - column:
+                  name: update_date
+                  type: TIMESTAMP(6)

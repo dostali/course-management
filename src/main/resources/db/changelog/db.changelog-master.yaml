@@ -9,3 +9,7 @@ databaseChangeLog:
       file: db/changelog/v1.0/create-course-student-contract-table.yml
   - include:
       file: db/changelog/v1.0/create-student-monthly-payment-table.yml
+  - include:
+      file: db/changelog/v1.0/create-course-details-table.yml
+
+
