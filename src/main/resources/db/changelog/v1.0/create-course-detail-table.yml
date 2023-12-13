@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id:  2023-12-06-create-course-details-table
+      id:  2023-12-06-create-course-detail-table
       author:  Habib.Habibli
       changes:
         - createTable:
@@ -28,7 +28,7 @@ databaseChangeLog:
                   type: bigint
                   constraints:
                     nullable: false
-                    foreignKeyName: course_and_details_fk
+                    foreignKeyName: course_and_course_detail_fk
                     references: COURSE(id)
               - column:
                   name: create_date

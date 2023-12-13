@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Builder
-@Table(name = "COURSE_DETAILS", schema = "course_management", catalog = "")
-public class CourseDetailsEntity {
+@Table(name = "COURSE_DETAIL", schema = "course_management", catalog = "")
+public class CourseDetailEntity {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -36,8 +36,5 @@ public class CourseDetailsEntity {
 
     private LocalDateTime updateDate;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "course_entity_id")
-    private CourseEntity courseEntity;
 
 }

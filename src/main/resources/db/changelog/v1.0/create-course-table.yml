@@ -29,10 +29,3 @@ databaseChangeLog:
               - column:
                   name: update_date
                   type: TIMESTAMP(6)
-              - column:
-                  name: course_detail_id
-                  type: bigint
-                  constraints:
-                    nullable: false
-                    foreignKeyName: course_detail_fk
-                    references: COURSE_DETAIL(id)
