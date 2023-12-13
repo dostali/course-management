@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id:  2023-12-13-create-subject-table
+      author:  dostali.musazade
+      changes:
+        - createTable:
+            tableName: SUBJECT
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: subject_pk
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(128)
+              - column:
+                  name: type
+                  type: VARCHAR(128)
+              - column:
+                  name: kind
+                  type: VARCHAR(128)
+              - column:
+                  name: create_date
+                  type: TIMESTAMP(6)
+              - column:
+                  name: update_date
+                  type: TIMESTAMP(6)

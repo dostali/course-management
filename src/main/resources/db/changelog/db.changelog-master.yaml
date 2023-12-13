@@ -11,5 +11,7 @@ databaseChangeLog:
       file: db/changelog/v1.0/create-student-monthly-payment-table.yml
   - include:
       file: db/changelog/v1.0/create-course-detail-table.yml
+  - include:
+      file: db/changelog/v1.0/create-subject-table.yml
 
 
