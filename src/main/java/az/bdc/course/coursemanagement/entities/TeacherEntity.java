@@ -44,4 +44,15 @@ public class TeacherEntity {
 
     @Column(name = "update_date")
     private LocalDateTime updateDate;
+
+    @PrePersist
+    private void onCreate() {
+        createDate = LocalDateTime.now();
+        updateDate = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    private void onUpdate() {
+        updateDate = LocalDateTime.now();
+    }
 }

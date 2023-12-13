@@ -6,9 +6,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,6 +27,7 @@ import java.util.List;
 @Setter
 @Builder
 @Table(name = "COURSE")
+@EqualsAndHashCode
 public class CourseEntity {
 
     @Id
@@ -36,7 +40,7 @@ public class CourseEntity {
 
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "courseEntity",
+    @OneToMany(mappedBy = "courseId",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     private List<CourseStudentContractEntity> courseStudentContractEntities;
@@ -44,4 +48,15 @@ public class CourseEntity {
     private LocalDateTime createDate;
 
     private LocalDateTime updateDate;
+
+    @PrePersist
+    private void onCreate() {
+        createDate = LocalDateTime.now();
+        updateDate = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    private void onUpdate() {
+        updateDate = LocalDateTime.now();
+    }
 }

@@ -3,13 +3,17 @@ package az.bdc.course.coursemanagement.entities;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,6 +28,7 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
+@EqualsAndHashCode
 @Table(name = "STUDENT")
 public class StudentEntity {
 
@@ -42,13 +47,24 @@ public class StudentEntity {
     private String phoneNumber;
 
 
-    @OneToMany(mappedBy = "studentEntity",
+    @OneToMany(mappedBy = "studentId",
             cascade = CascadeType.ALL,
-            orphanRemoval = true)
+            orphanRemoval = true, fetch = FetchType.LAZY)
     private List<CourseStudentContractEntity> courseStudentContractEntities;
 
     private LocalDateTime createDate;
 
     private LocalDateTime updateDate;
+
+    @PrePersist
+    private void onCreate() {
+        createDate = LocalDateTime.now();
+        updateDate = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    private void onUpdate() {
+        updateDate = LocalDateTime.now();
+    }
 
 }
