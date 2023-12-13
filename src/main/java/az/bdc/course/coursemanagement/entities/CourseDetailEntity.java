@@ -36,5 +36,16 @@ public class CourseDetailEntity {
 
     private LocalDateTime updateDate;
 
+    @PrePersist
+    private void onCreate() {
+        createDate = LocalDateTime.now();
+        updateDate = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    private void onUpdate() {
+        updateDate = LocalDateTime.now();
+    }
+
 
 }
