@@ -2,7 +2,7 @@ spring:
   application:
     name: course-management
   datasource:
-    url: jdbc:mysql://localhost:8382/course-management
+    url: jdbc:mysql://localhost:8382/course_management
     username: root
     password: 123
     driver-class-name: com.mysql.cj.jdbc.Driver

@@ -4,4 +4,6 @@ databaseChangeLog:
   - include:
       file: db/changelog/v1.0/create-course-table.yml
   - include:
+      file: db/changelog/v1.0/create-teacher-table.yml
+  - include:
       file: db/changelog/v1.0/create-course-student-contract-table.yml
