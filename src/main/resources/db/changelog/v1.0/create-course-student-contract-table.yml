@@ -12,7 +12,7 @@ databaseChangeLog:
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    primaryKeyName: course-student-contract_pk
+                    primaryKeyName: course_student_contract_pk
                     nullable: false
               - column:
                   name: monthly_amount

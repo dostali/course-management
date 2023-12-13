@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id:  2023-12-06-create-student-monthly-payment-table
+      author:  dostali.musazade
+      changes:
+        - createTable:
+            tableName: STUDENT_MONTHLY_PAYMENT
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: student_monthly_payment_pk
+                    nullable: false
+              - column:
+                  name: course_student_contract_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: course_student_contract_fk
+                    references: COURSE_STUDENT_CONTRACT(id)
+              - column:
+                  name: amount
+                  type: NUMERIC
+              - column:
+                  name: payment_date
+                  type: TIMESTAMP(6)
+              - column:
+                  name: create_date
+                  type: TIMESTAMP(6)
+              - column:
+                  name: update_date
+                  type: TIMESTAMP(6)
