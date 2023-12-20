@@ -18,7 +18,4 @@ public interface StudentService {
 
     void deleteById(long id);
 
-
-
-
 }

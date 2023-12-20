@@ -1,32 +1,22 @@
 package az.bdc.course.coursemanagement.dto;
 
-
 import lombok.*;
 
-import java.sql.Date;
 import java.time.LocalDateTime;
 
-
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class TeacherDto {
-
+public class SubjectDto {
     private Long id;
 
     private String name;
 
-    private String surname;
+    private String type;
 
-    private String fullname;
-
-    private Date birthDate;
-
-    private String phoneNumber;
-
-    private String pincode;
+    private String kind;
 
     private LocalDateTime createDate;
 
