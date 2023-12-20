@@ -1,34 +1,29 @@
 package az.bdc.course.coursemanagement.dto;
 
+import az.bdc.course.coursemanagement.entities.CourseEntity;
+import lombok.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class StudentDto {
 
+public class CourseDetailDto {
     private Long id;
 
     private String name;
 
-    private String surname;
-
-    private String fullname;
-
-    private LocalDate birthDate;
+    private String address;
 
     private String phoneNumber;
+
+    private CourseEntity courseEntity;
 
     private LocalDateTime createDate;
 
     private LocalDateTime updateDate;
+
 }
