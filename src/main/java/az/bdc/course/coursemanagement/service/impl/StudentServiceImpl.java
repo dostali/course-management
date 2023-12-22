@@ -22,11 +22,9 @@ public class StudentServiceImpl implements StudentService {
 
 
     @Override
-    public StudentDto getByNameAndSurname(String name, String surname) {
-        StudentEntity studentEntity = repository.findByNameAndSurname(name, surname).orElseThrow(
-                () -> new CustomerNotFoundException("Məlumat tapilmadi",
-                        List.of(name, surname)));
-        return mapper.toDto(studentEntity);
+    public List<StudentDto> getByNameAndSurname(String name, String surname) {
+        return repository.findByNameAndSurname(name, surname)
+                .stream().map(mapper::toDto).collect(Collectors.toList());
     }
 
     @Override

@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface CourseService {
 
-    CourseDto getByNameAndSurname(String name, String surname);
 
     List<CourseDto> getAll();
 

@@ -1,8 +1,10 @@
 package az.bdc.course.coursemanagement.dto;
 
-import az.bdc.course.coursemanagement.entities.CourseEntity;
-import az.bdc.course.coursemanagement.entities.StudentEntity;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -22,9 +24,9 @@ public class CourseStudentContractDto {
 
     private LocalDate contractDate;
 
-    private CourseEntity courseId;
+    private Long courseId;
 
-    private StudentEntity studentId;
+    private Long studentId;
 
     private LocalDateTime createDate;
 

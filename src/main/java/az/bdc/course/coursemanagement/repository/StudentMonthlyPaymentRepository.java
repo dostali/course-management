@@ -7,6 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface StudentMonthlyPaymentRepository extends JpaRepository<StudentMonthlyPaymentEntity, Long> {
-    Optional<StudentMonthlyPaymentEntity> findByNameAndSurname(String name, String surname);
 }
 

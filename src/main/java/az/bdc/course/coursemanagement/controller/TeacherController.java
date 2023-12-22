@@ -23,7 +23,7 @@ public class TeacherController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<TeacherDto> getAllById(@PathVariable long id){
+    public ResponseEntity<TeacherDto> getById(@PathVariable long id){
         return ResponseEntity.ok(teacherService.getById(id));
     }
     @GetMapping("/name-surname")
@@ -44,7 +44,7 @@ public class TeacherController {
     }
 
     @DeleteMapping ("/{id}")
-    public ResponseEntity<?> update(@PathVariable long id){
+    public ResponseEntity<?> delete(@PathVariable long id){
         teacherService.deleteById(id);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

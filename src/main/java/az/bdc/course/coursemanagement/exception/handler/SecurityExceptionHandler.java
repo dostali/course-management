@@ -2,6 +2,7 @@ package az.bdc.course.coursemanagement.exception.handler;
 
 
 import az.bdc.course.coursemanagement.exception.CustomerNotFoundException;
+import az.bdc.course.coursemanagement.exception.DataNotFoundException;
 import az.bdc.course.coursemanagement.exception.utils.HttpResponseConstants;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -70,6 +71,19 @@ public class SecurityExceptionHandler extends ResponseEntityExceptionHandler {
                 HttpStatus.NOT_FOUND,
                 ex.getMessage(),
                 2123,
+                Collections.emptyList()
+        );
+    }
+
+    @ExceptionHandler(DataNotFoundException.class)
+    public ResponseEntity<Object> handle(DataNotFoundException ex,
+                                         WebRequest request) {
+        log.error("DataNotFoundException: {}", ex.getMessage());
+        return ofType(
+                request,
+                HttpStatus.NOT_FOUND,
+                ex.getMessage(),
+                2124,
                 Collections.emptyList()
         );
     }

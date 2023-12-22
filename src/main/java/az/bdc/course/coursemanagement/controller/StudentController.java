@@ -2,6 +2,7 @@ package az.bdc.course.coursemanagement.controller;
 
 
 import az.bdc.course.coursemanagement.dto.StudentDto;
+import az.bdc.course.coursemanagement.entities.StudentEntity;
 import az.bdc.course.coursemanagement.service.StudentService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -38,7 +39,7 @@ public class StudentController {
     }
 
     @GetMapping("/name-surname")
-    public ResponseEntity<StudentDto> getAllByNameAndSurname(@RequestParam String name, @RequestParam String surname){
+    public ResponseEntity<List<StudentDto>> getAllByNameAndSurname(@RequestParam String name, @RequestParam String surname){
         return ResponseEntity.ok(studentService.getByNameAndSurname(name, surname));
     }
 

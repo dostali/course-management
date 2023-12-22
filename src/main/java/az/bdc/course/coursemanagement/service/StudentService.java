@@ -1,12 +1,13 @@
 package az.bdc.course.coursemanagement.service;
 
 import az.bdc.course.coursemanagement.dto.StudentDto;
+import az.bdc.course.coursemanagement.entities.StudentEntity;
 
 import java.util.List;
 
 public interface StudentService {
 
-    StudentDto getByNameAndSurname(String name, String surname);
+    List<StudentDto> getByNameAndSurname(String name, String surname);
 
     List<StudentDto> getAll();
 

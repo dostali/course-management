@@ -5,7 +5,7 @@ import az.bdc.course.coursemanagement.entities.CourseDetailEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
-@Mapper
+@Mapper(componentModel = "spring")
 public interface CourseDetailMapper {
     CourseDetailMapper INSTANCE = Mappers.getMapper(CourseDetailMapper.class);
 
