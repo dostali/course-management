@@ -21,13 +21,7 @@ public class CourseDetailServiceImpl implements CourseDetailService {
     private final CourseDetailMapper mapper;
 
 
-    @Override
-    public CourseDetailDto getByNameAndSurname(String name, String surname) {
-        CourseDetailEntity courseDetailEntity = repository.findByNameAndSurname(name, surname).orElseThrow(
-                () -> new CustomerNotFoundException("Məlumat tapilmadi",
-                        List.of(name, surname)));
-        return mapper.toDto(courseDetailEntity);
-    }
+
 
     @Override
     public List<CourseDetailDto> getAll() {

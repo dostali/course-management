@@ -7,7 +7,7 @@ import az.bdc.course.coursemanagement.entities.StudentMonthlyPaymentEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
-@Mapper
+@Mapper(componentModel = "spring")
 
 public interface StudentMonthlyPaymentMapper {
     StudentMonthlyPaymentMapper INSTANCE = Mappers.getMapper(StudentMonthlyPaymentMapper.class);

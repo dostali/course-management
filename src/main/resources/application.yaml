@@ -2,7 +2,7 @@ spring:
   application:
     name: course-management
   datasource:
-    url: jdbc:mysql://localhost:3306/course_management
+    url: jdbc:mysql://localhost:3306/course_new_management
     username: root
     password: 12345678
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -16,6 +16,8 @@ spring:
     liquibase:
       enabled: true
       change-log: classpath:db/changelog/db.changelog-master.yaml
+  jpa:
+    show-sql: true
 
 
 server:

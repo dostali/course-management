@@ -46,12 +46,6 @@ public class StudentEntity {
 
     private String phoneNumber;
 
-
-    @OneToMany(mappedBy = "studentId",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<CourseStudentContractEntity> courseStudentContractEntities;
-
     private LocalDateTime createDate;
 
     private LocalDateTime updateDate;

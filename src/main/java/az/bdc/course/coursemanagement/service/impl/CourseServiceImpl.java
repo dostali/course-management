@@ -22,13 +22,7 @@ public class CourseServiceImpl implements CourseService {
     private final CourseMapper mapper;
 
 
-    @Override
-    public CourseDto getByNameAndSurname(String name, String surname) {
-        CourseEntity courseEntity = repository.findByNameAndSurname(name, surname).orElseThrow(
-                () -> new CustomerNotFoundException("Məlumat tapilmadi",
-                        List.of(name, surname)));
-        return mapper.toDto(courseEntity);
-    }
+
 
     @Override
     public List<CourseDto> getAll() {
